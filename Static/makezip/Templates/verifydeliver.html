@@ -1,0 +1,53 @@
+<main id="main" class="main">
+    <div class="pagetitle">
+      <h1>Dashboard</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active">Verify and Delivery</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+      <div class="row">
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Select The Parcel</h5>
+              <!-- Multi Columns Form -->
+              <form class="row g-3">
+                <div class="col-md-4">
+                  <label for="inputEmail5" class="form-label">Parcel ID To Deliver</label>
+                  <select id="parcelid" class="form-control">
+                    
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <br>
+                  <button type="button" class="btn btn-primary" id="getdetails">Get Details</button>
+                </div>
+              </form>
+              <br>
+              <div id="resultfield"></div>
+              <br>
+              <div id="activity" style="display: none;">
+                <ul class="list-group">
+                  <li class="list-group-item"><i class="bi bi-star me-1 text-success"></i> Luggage ID :  <span id="spanluggageid"></span><input type="hidden" id="curlugid">
+                  </li>
+                  <li class="list-group-item"><i class="bi bi-collection me-1 text-primary"></i> Parcel ID  :  <span id="spanparcelid"></span></li>
+                  <li class="list-group-item"><i class="bi bi-collection me-1 text-primary"></i> User Name  :  <span id="spanusername"></span></li>
+                  <li class="list-group-item"><i class="bi bi-collection me-1 text-primary"></i> Phone   :  <span id="spanphone"></span></li>
+                  <li class="list-group-item"><i class="bi bi-collection me-1 text-primary"></i> Address   :  <span id="spanaddress"></span></li>
+                </ul>
+                 <br>
+                   <button type="button" class="btn btn-primary" id="verifyuser">Verify User</button>
+                   <button type="button" class="btn btn-success" id="deliveruser" style="display: none">Deliver!</button>
+                  <br>
+              </div>
+
+             
+            </div>
+          </div>
+      </div>
+    </section>
+</main><!-- End #main -->

@@ -1,0 +1,20 @@
+
+#registerlink, #loginlink{
+	cursor: pointer;
+	font-weight: bold;
+	color: blue;
+}
+.bold{
+	font-weight: bold;
+}
+select, input{
+	font-size: 13px !important;
+}
+.hide{
+	display: none;
+}
+.custbtn{
+	border: none;
+    padding: 5px;
+    border-radius: 6px;
+}

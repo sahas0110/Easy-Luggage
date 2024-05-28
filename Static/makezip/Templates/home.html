@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ======= header ======= -->
+  {% include 'header.html' %}
+<!-- End header-->
+<body>
+  <!-- ======= navbar ======= -->
+  {% include 'nav.html' %}
+  <!-- End navbar-->
+
+  <!-- ======= Sidebar ======= -->
+  {% include 'sidebar.html' %}
+  <!-- End Sidebar-->
+
+  <!-- ======= Buisiness Template ======= -->
+  {% if request.path == '/servicemandashboard' %}
+    {% include 'servicemandashboard.html' %}
+  {% endif %}
+  {% if request.path == '/manageluggages' %}
+    {% include 'manageluggages.html' %}
+  {% endif %}
+  {% if request.path == '/zonecomfort' %}
+    {% include 'zonecomfort.html' %}
+  {% endif %}
+  {% if request.path == '/luggagedetails' %}
+    {% include 'luggagedetails.html' %}
+  {% endif %}
+  {% if request.path == '/currentzone' %}
+    {% include 'currentzone.html' %}
+  {% endif %}
+  {% if request.path == '/hubdistance' %}
+    {% include 'hubdistance.html' %}
+  {% endif %}
+  {% if request.path == '/verifydeliver' %}
+    {% include 'verifydeliver.html' %}
+  {% endif %}
+   {% if request.path == '/luggagesafe' %}
+    {% include 'luggagesafe.html' %}
+  {% endif %}
+  <!-- Customer Pages -->
+  {% if request.path == '/customerdashboard' %}
+    {% include 'customerdashboard.html' %}
+  {% endif %}
+  {% if request.path == '/customerparceldetails' %}
+    {% include 'customerparceldetails.html' %}
+  {% endif %}
+  {% if request.path == '/parcelhistory' %}
+    {% include 'parcelhistory.html' %}
+  {% endif %}
+  {% if request.path == '/customerqueries' %}
+    {% include 'customerqueries.html' %}
+  {% endif %}
+  <!-- Admin Pages -->
+  {% if request.path == '/admindashboard' %}
+    {% include 'admindashboard.html' %}
+  {% endif %}
+  {% if request.path == '/goodsreceive' %}
+    {% include 'goodsreceive.html' %}
+  {% endif %}
+  {% if request.path == '/adminquery' %}
+    {% include 'adminquery.html' %}
+  {% endif %}
+  {% if request.path == '/empdetails' %}
+    {% include 'empdetails.html' %}
+  {% endif %}
+  <!-- End Business Page-->
+
+    <!-- ======= Footer Template ======= -->
+  {% include 'footer.html' %}
+  <!-- End Footer Page-->
+</body>
+</html>

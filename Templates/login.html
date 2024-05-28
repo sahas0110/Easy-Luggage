@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Easy Luggage</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{ url_for('static', filename = 'assets/img/favicon.png') }}" rel="icon">
+  <link href="{{ url_for('static', filename = 'assets/img/apple-touch-icon.png') }}"  rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static', filename = 'assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename = 'assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename = 'assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename = 'assets/vendor/quill/quill.snow.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename = 'assets/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename = 'assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename = 'assets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename = 'assets/css/custom-style.css') }}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{ url_for('static', filename = 'assets/css/style.css') }}" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <main>
+    <div class="container">
+
+      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+              <div class="d-flex justify-content-center py-4">
+                <a href="#" class="logo d-flex align-items-center w-auto">
+                  <img src="assets/img/logo.png" alt="">
+                  <span class="d-none d-lg-block">Easy Luggage</span>
+                </a>
+              </div><!-- End Logo -->
+
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div id="signin-form">
+                      <div class="pt-4 pb-2">
+                        <h5 class="card-title text-center bold">Login to Your Account</h5>
+                        <div class="invalid-feedback" id="commonerror" style="text-align: center;"></div>
+                      </div>
+                      <form class="row g-3 needs-validation" novalidate>
+                        <div class="col-12">
+                           <p class="small mb-1">Your Role</p>
+                          <select id="usertype" class="form-control">
+                            <option value="user">User</option>
+                            <option value="serviceman">Service Man</option>
+                            <option value="admin">Admin</option>
+                          </select>
+                        </div>
+                        <div class="col-12">
+                           <p class="small mb-1">Registered Mobile</p>
+                          <input type="phone" name="phone" class="form-control" id="phone" required placeholder="e.g) 9878654534">
+                          <div class="invalid-feedback" id="phoneerror">Please enter your Phone!</div>
+                        </div>
+                        <div class="col-12">
+                           <p class="small mb-1">Password</p>
+                          <input type="password" name="password" class="form-control" id="password" required placeholder="e.g) *****">
+                          <div class="invalid-feedback" id="passworderror">Please enter your Password!</div>
+                        </div>
+                        <div class="col-12">
+                          <button class="btn btn-primary w-100" id="login" type="button">Login</button>
+                        </div>
+                        <div class="col-12">
+                          <center><p class="small mb-0">Don't have account? <span id="registerlink">Create an account</span></p>
+                          </center>
+                        </div>
+                      </form>
+                  </div>
+                  <div id="register-form" style="display: none;">
+                      <div class="pt-4 pb-2">
+                        <h5 class="card-title text-center">Register Your Account</h5>
+                        <div class="invalid-feedback" id="regcommonerror" style="text-align: center;"></div>
+                      </div>
+                      <form class="row g-3 needs-validation" novalidate>
+                        <div class="col-12">
+                          <p class="small mb-1">Your are an,</p>
+                          <select id="regusertype" class="form-control">
+                            <option value="user">Customer</option>
+                            <option value="serviceman">Service Man</option>
+                          </select>
+                        </div>
+                        <div class="col-6">
+                          <p class="small mb-1">Name</p>
+                          <input type="text" name="name" class="form-control" id="name" required placeholder="e.g) Jhon">
+                          <div class="invalid-feedback" id="nameerror">Enter Name!</div>
+                        </div>
+                        <div class="col-6">
+                           <p class="small mb-1">Phone</p>
+                          <input type="phone" name="regphone" class="form-control" id="regphone" required placeholder="e.g) 9876543210">
+                          <div class="invalid-feedback" id="regphoneerror">Enter Phone!</div>
+                        </div>
+                        <div class="col-6" >
+                           <p class="small mb-1">Address</p>
+                          <input type="phone" name="address" class="form-control" id="address" required placeholder="e.g) Agra, Delhi">
+                          <div class="invalid-feedback" id="addresserror">Enter Address!</div>
+                        </div>
+                        <div class="col-6" >
+                           <p class="small mb-1">Email</p>
+                          <input type="phone" name="email" class="form-control" id="email" required placeholder="e.g) user@gmail.com">
+                          <div class="invalid-feedback" id="emailerror">Enter Valid Email!</div>
+                        </div>
+                        <div class="col-6">
+                           <p class="small mb-1">Password</p>
+                          <input type="password" name="regpassword" class="form-control" id="regpassword" required placeholder="e.g) *****">
+                          <div class="invalid-feedback" id="regpassworderror">Enter Password!</div>
+                        </div>
+                        <div class="col-6">
+                           <p class="small mb-1">Confirm Password</p>
+                          <input type="password" name="confpassword" class="form-control" id="confpassword" required placeholder="e.g) *****">
+                          <div class="invalid-feedback" id="confpassworderror">Password does not match!</div>
+                        </div>
+                        <div id="otpsection" class="row" style="display: none;">
+                          <div class="col-6">
+                             <p class="small mb-1 ">OTP</p>
+                            <input type="text" name="otp" class="form-control" id="otp" required placeholder="e.g) 8756">
+                            <input type="hidden" id="temprefid">
+                            <div class="invalid-feedback" id="otperror">Entered OTP is invalid!</div>
+                          </div>
+                          <div class="col-6">
+                            <p class="small mb-1 " style="visibility: hidden;">OTP</p>
+                            <button class="btn btn-warning" id="verifyotp" type="button">Verify</button>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <button class="btn btn-primary w-100" id="registerbtn" type="button">Register</button>
+                        </div>
+                        <div class="col-12">
+                          <center><p class="small mb-0">Alredy Registered? <span id="loginlink">Login</span></p>
+                          </center>
+                        </div>
+                      </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main><!-- End #main -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static', filename = 'assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'assets/vendor/chart.js/chart.umd.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'assets/vendor/echarts/echarts.min.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'assets/vendor/quill/quill.min.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'assets/vendor/simple-datatables/simple-datatables.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'assets/vendor/tinymce/tinymce.min.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'assets/vendor/php-email-form/validate.js') }}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{ url_for('static', filename = 'assets/js/main.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'jquery.js') }}"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+
+      $("#registerlink").click(function(){
+        $("#register-form").show();
+        $("#signin-form").hide();
+      });
+      $("#loginlink").click(function(){
+        $("#register-form").hide();
+        $("#signin-form").show();
+      });
+
+      $("#registerbtn").click(function(){
+          let regusertype   = $("#regusertype").val()
+          let name       = $("#name").val()
+          let regphone   = $("#regphone").val()
+          let address    = $("#address").val()
+          let email      = $("#email").val()
+          let password   = $("#regpassword").val()
+          let confpassword   = $("#confpassword").val()
+
+          var typeerr  =  validate("usertype")
+          var nameerr  =  validate("name")
+          var phoneerr =  validate("regphone")
+          var addresserr  =  validate("address")
+          var emailerr =  validate("email")
+          var passerr  =  validate("regpassword")
+          var emailpattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
+          if(!emailpattern.test(email)){
+            $("#emailerror").show()
+          }else if (password != confpassword){
+            $("#confpassworderror").show()
+          }else if(typeerr == true && nameerr == true && phoneerr == true && addresserr == true && emailerr == true && passerr == true){
+            $("#confpassworderror").hide()
+            $("#emailerror").hide()
+              $.ajax({
+                url:"/registeruser", 
+                type: "post", 
+                dataType: 'json',
+                data: {"regusertype":regusertype, "name":name, "regphone":regphone, "address":address, "email":email, "password":password},
+                beforeSend: function(){
+                    $(".loader").show();
+                    $("#registerbtn").attr("disabled","true")
+                },
+                success: function(output){
+                  $(".loader").hide();
+                  if (output["msg"] == 1){
+                    $("#temprefid").val(output["refid"])
+                    $("#otpsection").show()
+                    $("#regcommonerror").html("Kindly check your mail for OTP")
+                    $("#regcommonerror").css("color","green")
+                  }else if (output["msg"] == 2){
+                    $("#regcommonerror").html("Already registered! Please login.")
+                    $("#registerbtn").removeAttr("disabled")
+                  }else{
+                    $("#regcommonerror").html("Something went wrong! Please try again.")
+                    $("#registerbtn").removeAttr("disabled")
+                  }
+                  $("#regcommonerror").show()
+                  
+                },
+                error:function(){
+                  $(".loader").hide();
+                  $("#regcommonerror").html("Something went wrong! Please try again.")
+                  $("#registerbtn").removeAttr("disabled")
+                }
+            });
+          }
+      });
+
+      $("#verifyotp").click(function(){
+        let regusertype   = $("#regusertype").val()
+        let otp = $("#otp").val()
+        let refid = $("#temprefid").val()
+        if (otp == ''){
+          $("#otperror").html("Enter the OTP")
+          $("#otperror").show()
+        }else{
+            $("#otperror").hide()
+            $.ajax({
+                url:"/verifyotp", 
+                type: "post", 
+                dataType: 'json',
+                data: {"otp":otp, "refid":refid, "regusertype":regusertype},
+                beforeSend: function(){
+                    
+                },
+                success: function(output){
+                  if (output["msg"] == 1){
+                      $("#regcommonerror").html("Registeration Success! Login to continue.")
+                      $("#regcommonerror").css("color","green")
+                    }else if (output["msg"] == 0){
+                      $("#regcommonerror").html("Entered OTP did not match. Try again.")
+                       $("#regcommonerror").css("color","red")
+                    }
+                    $("#regcommonerror").show()
+                }
+              });
+        }
+      });
+      
+
+       $("#login").click(function(){
+           let usertype = $("#usertype").val()
+           let phone    = $("#phone").val()
+           let password = $("#password").val()
+
+          var typeerr  =  validate("usertype")
+          var phoneerr =  validate("phone")
+          var passerr  =  validate("password")
+
+          if (typeerr == true && phoneerr == true && passerr== true){
+            $.ajax({
+                url:"/login", 
+                type: "post", 
+                dataType: 'json',
+                data: {"usertype":usertype, "phone":phone, "password":password},
+                beforeSend: function(){
+                    $(".loader").show();
+                },
+                success: function(output){
+                  $(".loader").hide();
+                  if (output["msg"] == 1){
+                    if (usertype == 'serviceman'){
+                      location.href = "{{ url_for('servicemandashboard') }}"
+                    }else if (usertype == 'user'){
+                      location.href = "{{ url_for('verifydeliver') }}"
+                    }else if(usertype == 'admin'){
+                      location.href = "{{ url_for('luggagedetails') }}"
+                    }
+                  }else{
+                    commonerror("Incorrect User ID and Password")
+                  }
+                },
+                error:function(){
+                  $(".loader").hide();
+                  commonerror("Something went wrong! Please try again.")
+                }
+            });
+          }
+          
+       });
+
+       function validate(id){
+        let compid = '#'+id
+        let errid = compid+"error"
+        if ($(compid).val() == ''){
+          $(errid).show()
+          return false
+        }else{
+          $(errid).hide()
+          $("#commonerror").hide()
+          return true
+        }
+       }
+
+       function commonerror(message){
+        $("#commonerror").html(message)
+        $("#commonerror").show()
+       }
+
+    })
+  </script>
+
+
+</body>
+
+</html>

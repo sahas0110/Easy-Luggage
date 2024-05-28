@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<main id="main" class="main">
+  <style type="text/css">
+    .badge{
+          width: 50%;
+    }
+  </style>
+    <div class="pagetitle">
+      <h1>Goods Receive</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active">Goods Receive</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+      <div class="row">
+
+        <section class="section dashboard">
+      
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Select The Luggage</h5>
+              <div class="row">
+                <div class="col-md-4">
+                  <label for="inputEmail5" class="form-label">Luggage ID</label>
+                  <select id="luggageid" class="form-control">
+                    
+                  </select>
+                </div>
+               <div class="col-md-4">
+                  <label for="inputEmail5" class="form-label">From</label>
+                  <select id="frombranch" class="form-control">
+                    
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <label for="inputEmail5" class="form-label">Received at</label>
+                  <select id="tobranch" class="form-control">
+                    
+                  </select>
+                </div><br>
+                <div class="col-md-4">
+                  <label for="inputEmail5" class="form-label">Number of Parcels</label>
+                  <input type="number" id="actualno" class="form-control" disabled="">
+                </div>
+                <div class="col-md-4">
+                  <label for="inputEmail5" class="form-label">Received No.of Parcels</label>
+                  <input type="number" id="receivedno" class="form-control">
+                </div>
+                <div class="col-md-4">
+                  <label for="inputEmail5" class="form-label">Missed (if any)</label>
+                  <input type="number" id="missed" class="form-control">
+                </div><br>
+                <div class="col-md-8">
+                  <label for="inputEmail5" class="form-label">Comments</label>
+                  <textarea id="comments" class="form-control"></textarea>
+                </div>
+                <p class="text-center" id="info"></p>
+            </div>
+          </div>
+      </div>
+      <div class="text-center">
+        <button type="button" id="addgr" class="btn btn-primary">Submit</button>
+      </div>
+    </section>
+
+      </div>
+    </section>
+    
+  </main><!-- End #main -->

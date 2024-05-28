@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<main id="main" class="main">
+  <style type="text/css">
+    .badge{
+          width: 50%;
+    }
+  </style>
+    <div class="pagetitle">
+      <h1>Goods Receive</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active">Queries or Feedback</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+      <div class="row">
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Query / Feedback</h5>
+              <!-- Multi Columns Form -->
+              <form class="row g-3">
+                <div class="col-md-6">
+                  <label for="inputEmail5" class="form-label">Subject</label>
+                  <input type="text" id="subject" class="form-control" id="inputEmail5">
+                </div>
+                <div class="col-md-6"></div>
+                <div class="col-md-6">
+                  <label for="inputAddress5" class="form-label">Query/ Feed</label>
+                  <textarea id="query" class="form-control" id="inputEmail5"></textarea>
+                </div>
+                <div class="col-md-6"></div>
+                <span id="errormsg"></span>
+                <div>
+                  <button type="button" id="addquery" class="btn btn-primary">Send us</button>
+                </div>
+              </form><!-- End Multi Columns Form -->
+            </div>
+          </div>
+      </div>
+    </section>
+    
+  </main><!-- End #main -->

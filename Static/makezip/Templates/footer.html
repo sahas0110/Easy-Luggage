@@ -1,0 +1,57 @@
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static', filename = 'assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'assets/vendor/chart.js/chart.umd.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'assets/vendor/echarts/echarts.min.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'assets/vendor/quill/quill.min.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'assets/vendor/simple-datatables/simple-datatables.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'assets/vendor/tinymce/tinymce.min.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'assets/vendor/php-email-form/validate.js') }}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{ url_for('static', filename = 'assets/js/main.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'jquery.js') }}"></script>
+  {% if request.path == '/manageluggages' %}
+    <script src="{{ url_for('static', filename = 'js/manageluggages.js') }}"></script>
+  {% endif %}
+  {% if request.path == '/zonecomfort' %}
+    <script src="{{ url_for('static', filename = 'js/zonecomfort.js') }}"></script>
+  {% endif %}
+  {% if request.path == '/luggagedetails' %}
+    <script src="{{ url_for('static', filename = 'js/luggagedetails.js') }}"></script>
+  {% endif %}
+  {% if request.path == '/luggagesafe' %}
+    <script src="{{ url_for('static', filename = 'js/luggagesafe.js') }}"></script>
+  {% endif %}
+  {% if request.path == '/currentzone' %}
+     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+      defer
+    ></script>
+    <script src="{{ url_for('static', filename = 'js/currentzone.js') }}"></script>
+  {% endif %}
+  {% if request.path == '/hubdistance' %}
+    <script src="{{ url_for('static', filename = 'js/hubdistance.js') }}"></script>
+  {% endif %}
+  {% if request.path == '/customerparceldetails' %}
+    <script src="{{ url_for('static', filename = 'js/customerparceldetails.js') }}"></script>
+  {% endif %}
+  {% if request.path == '/parcelhistory' %}
+    <script src="{{ url_for('static', filename = 'js/parcelhistory.js') }}"></script>
+  {% endif %}
+  {% if request.path == '/verifydeliver' %}
+    <script src="{{ url_for('static', filename = 'js/verifydeliver.js') }}"></script>
+  {% endif %}
+  {% if request.path == '/customerqueries' %}
+    <script src="{{ url_for('static', filename = 'js/customerqueries.js') }}"></script>
+  {% endif %}
+  {% if request.path == '/adminquery' %}
+    <script src="{{ url_for('static', filename = 'js/adminquery.js') }}"></script>
+  {% endif %}
+  {% if request.path == '/empdetails' %}
+    <script src="{{ url_for('static', filename = 'js/empdetails.js') }}"></script>
+  {% endif %}
+  {% if request.path == '/goodsreceive' %}
+    <script src="{{ url_for('static', filename = 'js/goodsreceive.js') }}"></script>
+  {% endif %}

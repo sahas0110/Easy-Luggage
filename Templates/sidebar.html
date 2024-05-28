@@ -1,0 +1,135 @@
+<aside id="sidebar" class="sidebar">
+
+    {% if session.usertype == 'admin' %}
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+          <a class="nav-link " href="{{ url_for('admindashboard') }}">
+            <i class="bi bi-grid"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="{{ url_for('goodsreceive') }}">
+            <i class="bi bi-truck"></i>
+            <span>Goods Receive</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="{{ url_for('adminquery') }}">
+            <i class="bi bi-patch-question"></i>
+            <span>Feedback and Queries</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="{{ url_for('zonecomfort') }}">
+            <i class="bi bi-truck-flatbed"></i>
+            <span>Travel Zone Comfort</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="{{ url_for('hubdistance') }}">
+            <i class="bi bi-sign-turn-right-fill"></i>
+            <span>Hub Distance and Time</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="{{ url_for('luggagedetails') }}">
+            <i class="bi bi-file-zip"></i>
+            <span>Luggages Details</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="{{ url_for('empdetails') }}">
+            <i class="bi bi-person"></i>
+            <span>Employees Details</span>
+          </a>
+        </li>
+      </ul>
+    {% endif %}
+    
+    {% if session.usertype == 'serviceman' %}
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+          <a class="nav-link " href="#">
+            <i class="bi bi-grid"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <!-- End Dashboard Nav -->
+        <li class="nav-heading">Tasks</li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="{{ url_for('verifydeliver') }}">
+            <i class="bi bi-clipboard-check-fill"></i>
+            <span>Verify & Deliver</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="{{ url_for('luggagedetails') }}">
+            <i class="bi bi-dash-square"></i>
+            <span>Luggages Details</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="{{ url_for('manageluggages') }}">
+            <i class="bi bi-person-add"></i>
+            <span>Add Parcels</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="{{ url_for('zonecomfort') }}">
+            <i class="bi bi-cloud-slash-fill"></i>
+            <span>Travel Zone Comfort</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="{{ url_for('hubdistance') }}">
+            <i class="bi bi-bezier"></i>
+            <span>Hub Distance</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="{{ url_for('currentzone') }}">
+            <i class="bi bi-crosshair2"></i>
+            <span>Current Zone</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="{{ url_for('luggagesafe') }}">
+            <i class="bi bi-crosshair2"></i>
+            <span>Track Luggage Zone</span>
+          </a>
+        </li>
+        <!-- End Profile Page Nav -->
+      </ul>
+    {% endif %}
+
+    {% if session.usertype == 'user' %}
+       <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+          <a class="nav-link " href="#">
+            <i class="bi bi-grid"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <!-- End Dashboard Nav -->
+        <li class="nav-heading">Tasks</li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="{{ url_for('customerparceldetails')}}">
+            <i class="bi bi-file-zip"></i>
+            <span>Parcel Details</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="{{ url_for('customerqueries')}}">
+            <i class="bi bi-patch-question"></i>
+            <span>Queries and Feedback</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="{{ url_for('parcelhistory')}}">
+            <i class="bi bi-clock-history"></i>
+            <span>Parcel History</span>
+          </a>
+        </li>
+    {% endif %}
+  </aside>
